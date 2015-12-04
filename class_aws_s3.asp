@@ -9,8 +9,8 @@
 
 
 '-- Amazon Web Services > My Account > Access Credentials > Access Keys --'
-Const strAccessKeyID = "AKIAJZCAMHOBZM6EMPXA"
-Const strSecretAccessKey = "PupjmLdXLAQtTOCr1XULZEuHyehrP597TwCYaL+D"
+Const strAccessKeyID = "YOUR ID"
+Const strSecretAccessKey = "YOUR SECRET KEY"
 Const strLocalTempDir = "c:\temp\"
 
 '_____________________________________________________________________________________________________________
