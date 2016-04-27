@@ -7,7 +7,6 @@
 ' Created date:  2014-03-29
 '=============================================================================================================
 
-
 '-- Amazon Web Services > My Account > Access Credentials > Access Keys --'
 Const strAccessKeyID = "YOUR ID"
 Const strSecretAccessKey = "YOUR SECRET KEY"
@@ -15,32 +14,24 @@ Const strLocalTempDir = "c:\temp\"
 
 '_____________________________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 Class amazon
-
-
 Private s3_strBinaryData 'As String
 Private s3_strLocalFile 'As String
 Private s3_strRemoteFile 'As String
 Private s3_strBucket 'As String
 Private s3_strOutFileName 'As String
-
-	
 '_____________________________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 Private Sub Class_Initialize()
-   
-   
 End Sub
-
 Private Sub Class_Terminate()
-
 End Sub
 '_____________________________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 'Return Property
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 
 Public Property Get s3_LocalFile() 'As String
    s3_LocalFile = s3_strLocalFile
@@ -58,18 +49,14 @@ Public Property Get s3_OutFileName() 'As String
    s3_OutFileName = s3_strOutFileName
 End Property
 
-
 Public Property Get s3_BinaryData() 'As String
    s3_BinaryData = s3_strBinaryData
 End Property
 
-
-
-
 '_____________________________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 'Set Preperty
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 
 Public Property Let s3_LocalFile(ByVal NewValue) 'As String)
    s3_strLocalFile = NewValue
@@ -91,13 +78,9 @@ Public Property Let s3_BinaryData(ByVal NewValue) 'As String)
    s3_strBinaryData = NewValue
 End Property
 
-
-
-
 '___________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
-
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 
 Function NowInGMT()
   'This is probably not the best implementation, but it works ;-) --'
@@ -155,8 +138,6 @@ Function NowInGMT()
   NowInGMT = strNowInGMT
 End Function
 
-
-
 '-- GetBytesFromString --------------------------------------------------------'
 Function GetBytesFromString(strValue)
   Dim stm: Set stm = Server.CreateObject("ADODB.Stream")
@@ -170,8 +151,6 @@ Function GetBytesFromString(strValue)
   Set stm = Nothing
 End Function
 
-
-
 '-- HMACSHA1 ------------------------------------------------------------------'
 Function HMACSHA1(strKey, strValue)
   Dim sha1: Set sha1 = Server.CreateObject("System.Security.Cryptography.HMACSHA1")
@@ -179,8 +158,6 @@ Function HMACSHA1(strKey, strValue)
   HMACSHA1 = sha1.ComputeHash_2(GetBytesFromString(strValue))
   Set sha1 = Nothing
 End Function
-
-
 
 '-- ConvertBytesToBase64 ------------------------------------------------------'
 Function ConvertBytesToBase64(byteValue)
@@ -192,8 +169,6 @@ Function ConvertBytesToBase64(byteValue)
   Set elm = Nothing
   Set dom = Nothing
 End Function
-
-
 
 '-- GetBytesFromFile ----------------------------------------------------------'
 Function GetBytesFromFile(strFileName)
@@ -219,11 +194,6 @@ Function GetBytesFromStream(strBinary)
   Set stm = Nothing
 End Function
 
-
-
-
-
-
 Public Function s3_Delete() ' as string (responsecode)
 
 '-- Authentication: --'
@@ -237,37 +207,23 @@ Dim strStringToSign: strStringToSign = _
 Dim strSignature: strSignature = ConvertBytesToBase64(HMACSHA1(strSecretAccessKey, strStringToSign))
 Dim strAuthorization: strAuthorization = "AWS " & strAccessKeyID & ":" & strSignature
 
-
-
 '-- Download: --'
-
-
 Dim xhttp: Set xhttp = Server.CreateObject("MSXML2.ServerXMLHTTP")
 xhttp.open "DELETE", "http://" & s3_strBucket & ".s3.amazonaws.com/" & s3_strRemoteFile, False
 xhttp.setRequestHeader "Content-Type", "text/xml"
 xhttp.setRequestHeader "Date", strNowInGMT 'Yes, this line is mandatory ;-) --'
 xhttp.setRequestHeader "Authorization", strAuthorization
 xhttp.send
-
 If xhttp.status = "204" Then '204 = delete ok'
   s3_Delete = "1"
 Else
   s3_Delete = "0:" & xhttp.responseText
 End If
-
 Set xhttp = Nothing
 '-- NowInGMT ------------------------------------------------------------------'
-
-
 End Function
 
-
-
-
-
-
 Public Function s3_UploadBinary() ' as string (responsecode)
-
 '-- Authentication: --'
 Dim strNowInGMT: strNowInGMT = NowInGMT()
 Dim strStringToSign: strStringToSign = _
@@ -294,18 +250,9 @@ End If
 
 Set xhttp = Nothing
 '-- NowInGMT ------------------------------------------------------------------'
-
-
-
 End Function
 
-
-
-
-
-
 Public Function s3_Upload() ' as string (responsecode)
-
 '-- Authentication: --'
 Dim strNowInGMT: strNowInGMT = NowInGMT()
 Dim strStringToSign: strStringToSign = _
@@ -332,16 +279,9 @@ End If
 
 Set xhttp = Nothing
 '-- NowInGMT ------------------------------------------------------------------'
-
-
-
 End Function
 
-
-
-
 Public Function s3_Download() ' as string (responsecode)
-
 '-- Authentication: --'
 Dim strNowInGMT: strNowInGMT = NowInGMT()
 Dim strStringToSign: strStringToSign = _
@@ -352,12 +292,7 @@ Dim strStringToSign: strStringToSign = _
   "/" & s3_strBucket + "/" & s3_strRemoteFile
 Dim strSignature: strSignature = ConvertBytesToBase64(HMACSHA1(strSecretAccessKey, strStringToSign))
 Dim strAuthorization: strAuthorization = "AWS " & strAccessKeyID & ":" & strSignature
-
-
-
 '-- Download: --'
-
-
 Dim xhttp: Set xhttp = Server.CreateObject("MSXML2.ServerXMLHTTP")
 xhttp.open "GET", "http://" & s3_strBucket & ".s3.amazonaws.com/" & s3_strRemoteFile, False
 xhttp.setRequestHeader "Content-Type", "text/xml"
@@ -378,18 +313,11 @@ If xhttp.status = "200" Then
 Else
   s3_Download = "0:" & xhttp.responseText
 End If
-
 Set xhttp = Nothing
 '-- NowInGMT ------------------------------------------------------------------'
-
-
-
 End Function
 
-
-
 Public Function s3_StreamToBrowser() ' as string (responsecode)
-
 '-- Authentication: --'
 Dim strNowInGMT: strNowInGMT = NowInGMT()
 Dim strStringToSign: strStringToSign = _
@@ -400,36 +328,20 @@ Dim strStringToSign: strStringToSign = _
   "/" & s3_strBucket + "/" & s3_strRemoteFile
 Dim strSignature: strSignature = ConvertBytesToBase64(HMACSHA1(strSecretAccessKey, strStringToSign))
 Dim strAuthorization: strAuthorization = "AWS " & strAccessKeyID & ":" & strSignature
-
-
-
 '-- Download: --'
-
-
 Dim xhttp: Set xhttp = Server.CreateObject("MSXML2.ServerXMLHTTP")
 xhttp.open "GET", "http://" & s3_strBucket & ".s3.amazonaws.com/" & s3_strRemoteFile, False
 xhttp.setRequestHeader "Content-Type", "text/xml"
 xhttp.setRequestHeader "Date", strNowInGMT 'Yes, this line is mandatory ;-) --'
 xhttp.setRequestHeader "Authorization", strAuthorization
 xhttp.send
-
 If xhttp.status = "200" Then
-
 	Set oStream = Server.CreateObject("ADODB.Stream")
 	oStream.Open
 	oStream.Type = 1
 	oStream.Write xhttp.responseBody
-
-
 	TempFile = strLocalTempDir & timer
-
-
 	oStream.SaveToFile TempFile & fname, 2
-
-
-
-
-
 	select case lcase(right(s3_strOutFileName,3))
 	case "pdf"
 	Response.ContentType = "application/pdf"
@@ -446,71 +358,33 @@ If xhttp.status = "200" Then
 	case Else
 	Response.ContentType = "application/octet-stream"
 	end select
-
-
-
-
 	Response.Charset = "UTF-8"
-
 	Response.AddHeader "Content-Disposition", "attachment; filename="& s3_strOutFileName
-
-
 	oStream.LoadFromFile(TempFile)
-
-
-
-
 	do while not oStream.EOS
 	response.binaryWrite oStream.read(3670016) 
 	response.flush
 	loop
-
-
 	oStream.Close
-
-
-
         Set objFSO = Createobject("Scripting.FileSystemObject")
         If objFSO.Fileexists(TempFile) Then objFSO.DeleteFile TempFile
         Set objFSO = Nothing
-
-
-
 End If
-
 Set xhttp = Nothing
 '-- NowInGMT ------------------------------------------------------------------'
-
-
-
 End Function
 
-
-
 Public Function s3_DeleteLocalFile() ' as string (responsecode)
-
-
         Set objFSO = Createobject("Scripting.FileSystemObject")
         If objFSO.Fileexists(s3_strLocalFile) Then objFSO.DeleteFile s3_strLocalFile
         Set objFSO = Nothing
-
-
-
-
 End Function
-
-
-
-
-
-
-
 '_____________________________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 End Class
 '_____________________________________________________________________________________________________________
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-'øøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøøø
+'Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸Ã¸
 
 %>
